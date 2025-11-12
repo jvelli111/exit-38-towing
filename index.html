@@ -1,526 +1,359 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exit 38 Towing & Recovery | 24/7 Tri-State Roadside & Tows</title>
-  <meta name="description" content="Exit 38 Towing & Recovery — Fast 24/7 towing, roadside assistance, and vehicle recovery across the Tri-State (NJ/PA/NY). Call 609-532-4449." />
-  <style>
-    :root{
-      /* Blue-first palette with dark-green accents */
-      --brand:#0b77d5;       /* primary blue */
-      --brand-2:#0a5fb0;     /* deeper blue */
-      --accent:#0b7a55;      /* dark green accent */
-      --accent-2:#084e3a;    /* darker green */
-      --ink:#09131a;
-      --muted:#385c73;
-      --bg:#f4f9ff;          /* very light blue background */
-      --card:#ffffff;
-      --ring: rgba(11,119,213,.25);
-      --radius:16px;
-      --shadow: 0 8px 30px rgba(0,0,0,.08);
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
-    a{color:var(--brand-2);text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(180%) blur(10px);
-      background:rgba(244,249,255,.85);
-      border-bottom:1px solid rgba(0,0,0,.05);
-    }
-    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-    .row{display:flex;align-items:center;gap:18px}
-    .space{justify-content:space-between}
-    .logo-wrap{display:flex;align-items:center;gap:14px;padding:10px 0}
-    .logo-svg{width:64px;height:64px}
-    .brand-text{line-height:1}
-    .brand-title{font-weight:800;font-size:1.3rem;letter-spacing:.2px}
-    .brand-sub{font-size:.85rem;color:var(--muted)}
-    nav a{padding:10px 12px;border-radius:12px;font-weight:600;color:#0b2740}
-    nav a:hover{background:#e9f2ff}
-    .cta{display:inline-flex;align-items:center;gap:10px;
-      background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;
-      padding:12px 16px;border-radius:14px;font-weight:800;box-shadow:var(--shadow)}
-    .cta small{opacity:.9;font-weight:600}
-
-    /* Hero */
-    .hero{
-      position:relative; overflow:hidden; border-bottom:1px solid rgba(0,0,0,.06);
-      background:linear-gradient(180deg, rgba(11,119,213,.08), rgba(11,122,85,.06));
-    }
-    .hero-grid{
-      display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
-      padding:48px 0;
-    }
-    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px 12px;border-radius:999px;box-shadow:var(--shadow)}
-    .badge b{color:var(--brand)}
-    h1{font-size:clamp(28px,4vw,44px);margin:.4rem 0 1rem 0}
-    .lead{font-size:clamp(16px,1.8vw,18px);color:#0e3550}
-    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .card{
-      background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius);
-      padding:16px; box-shadow:var(--shadow)
-    }
-    .card h3{font-size:1rem;margin:.2rem 0 .6rem 0}
-    .card p{font-size:.95rem;color:#22445a}
-
-    .hero-img{
-      border-radius:var(--radius);
-      overflow:hidden;box-shadow:var(--shadow);
-      aspect-ratio: 16/10; background:#dbe9f7;
-    }
-    .hero-img img{width:100%;height:100%;object-fit:cover}
-
-    /* Sections */
-    section{padding:64px 0}
-    .section-title{font-size:1.8rem;margin:0 0 14px 0}
-    .section-desc{color:#244a62;margin:0 0 24px 0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eaf3ff;border:1px solid rgba(0,0,0,.06);font-weight:700;color:#0b2740}
-
-    /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .gallery .g{
-      aspect-ratio: 4/3; overflow:hidden; border-radius:14px; box-shadow:var(--shadow);
-      background:#dbe9f7;
-    }
-    .gallery img{width:100%;height:100%;object-fit:cover}
-
-    /* Contact */
-    form{
-      background:var(--card); padding:18px;border-radius:var(--radius); border:1px solid rgba(0,0,0,.06); box-shadow:var(--shadow)
-    }
-    label{font-weight:700;font-size:.95rem}
-    input,textarea,select{
-      width:100%;margin-top:6px;margin-bottom:14px;padding:12px 14px;border:1px solid #c9dbec;border-radius:12px;background:#f7fbff;
-      outline:none; box-shadow:0 0 0 3px transparent; transition:.2s box-shadow;
-      font-size:1rem;
-    }
-    input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px var(--ring)}
-    button{cursor:pointer;border:0;border-radius:14px;padding:14px 16px;font-weight:900}
-    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; box-shadow:var(--shadow)}
-    .contact-cards{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-
-    /* Footer */
-    footer{background:#0b2740;color:#e6f2ff;padding:36px 0;margin-top:32px}
-    footer a{color:#c7e1ff}
-    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
-    .fine{color:#a6c9ea;font-size:.9rem}
-
-    /* Mobile */
-    @media (max-width: 960px){
-      nav{display:none}
-      .hero-grid{grid-template-columns:1fr}
-      .hero-cards{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr 1fr}
-      .contact-cards{grid-template-columns:1fr}
-      .foot-grid{grid-template-columns:1fr}
-    }
-
-    /* Sticky quick-call on mobile */
-    .sticky-call{
-      position:fixed;left:0;right:0;bottom:0;z-index:60;
-      display:flex;gap:10px;justify-content:center;padding:12px;
-      background:linear-gradient(180deg, transparent, rgba(255,255,255,.85));
-      backdrop-filter: blur(8px);
-    }
-    .sticky-call a{
-      flex:1; text-align:center; padding:12px 10px; border-radius:12px; font-weight:900;
-      border:1px solid rgba(0,0,0,.08); background:#fff;
-    }
-    .sticky-call .hot{
-      background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; border:0;
-    }
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-  </style>
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"TowingService",
-    "name":"Exit 38 Towing & Recovery",
-    "areaServed":["New Jersey","Pennsylvania","New York"],
-    "telephone":"+1-609-532-4449",
-    "email":"info@e38towing.com",
-    "url":"https://e38towing.com",
-    "openingHours":"Mo-Su 00:00-23:59",
-    "serviceArea":{"@type":"Place","name":"Tri-State Area (NJ/PA/NY)"},
-    "priceRange":"$$"
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exit 38 Towing & Recovery | 24/7 Tri-State Roadside & Tows</title>
+<meta name="description" content="Exit 38 Towing & Recovery — Fast 24/7 towing, roadside assistance, and vehicle recovery across the Tri-State (NJ/PA/NY). Call 609-532-4449." />
+<style>
+  :root{
+    /* Blue-first with dark-green accents */
+    --brand:#0b77d5;      /* primary blue */
+    --brand-2:#0a5fb0;    /* deeper blue */
+    --accent:#0b7a55;     /* dark green accent */
+    --ink:#09131a;
+    --muted:#385c73;
+    --bg:#f4f9ff;
+    --card:#ffffff;
+    --ring: rgba(11,119,213,.25);
+    --radius:16px;
+    --shadow: 0 8px 30px rgba(0,0,0,.08);
   }
-  </script>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  a{color:var(--brand-2);text-decoration:none}
+  img{max-width:100%;display:block}
+
+  header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px);
+         background:rgba(244,249,255,.85); border-bottom:1px solid rgba(0,0,0,.05)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+  .row{display:flex;align-items:center;gap:18px}
+  .space{justify-content:space-between}
+  .logo-wrap{display:flex;align-items:center;gap:14px;padding:10px 0}
+  .logo-svg{width:64px;height:64px}
+  .brand-text{line-height:1}
+  .brand-title{font-weight:800;font-size:1.3rem}
+  .brand-sub{font-size:.85rem;color:var(--muted)}
+  nav a{padding:10px 12px;border-radius:12px;font-weight:600;color:#0b2740}
+  nav a:hover{background:#e9f2ff}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;padding:12px 16px;border-radius:14px;font-weight:800;box-shadow:var(--shadow)}
+
+  .hero{position:relative; overflow:hidden; border-bottom:1px solid rgba(0,0,0,.06);
+        background:linear-gradient(180deg, rgba(11,119,213,.08), rgba(11,122,85,.06))}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:48px 0}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px 12px;border-radius:999px;box-shadow:var(--shadow)}
+  .badge b{color:var(--brand)}
+  h1{font-size:clamp(28px,4vw,44px);margin:.4rem 0 1rem 0}
+  .lead{font-size:clamp(16px,1.8vw,18px);color:#0e3550}
+  .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .card{background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+  .card h3{font-size:1rem;margin:.2rem 0 .6rem 0}
+  .card p{font-size:.95rem;color:#22445a}
+
+  .hero-img{border-radius:var(--radius); overflow:hidden;box-shadow:var(--shadow); aspect-ratio: 16/10; background:#dbe9f7;}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+
+  section{padding:64px 0}
+  .section-title{font-size:1.8rem;margin:0 0 14px 0}
+  .section-desc{color:#244a62;margin:0 0 24px 0}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eaf3ff;border:1px solid rgba(0,0,0,.06);font-weight:700;color:#0b2740}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .gallery .g{aspect-ratio: 4/3; overflow:hidden; border-radius:14px; box-shadow:var(--shadow); background:#dbe9f7;}
+  .gallery img{width:100%;height:100%;object-fit:cover}
+
+  form{background:var(--card); padding:18px;border-radius:var(--radius); border:1px solid rgba(0,0,0,.06); box-shadow:var(--shadow)}
+  label{font-weight:700;font-size:.95rem}
+  input,textarea,select{width:100%;margin-top:6px;margin-bottom:14px;padding:12px 14px;border:1px solid #c9dbec;border-radius:12px;background:#f7fbff;outline:none; box-shadow:0 0 0 3px transparent; transition:.2s box-shadow; font-size:1rem;}
+  input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px var(--ring)}
+  button{cursor:pointer;border:0;border-radius:14px;padding:14px 16px;font-weight:900}
+  .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; box-shadow:var(--shadow)}
+  .contact-cards{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+
+  footer{background:#0b2740;color:#e6f2ff;padding:36px 0;margin-top:32px}
+  footer a{color:#c7e1ff}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+  .fine{color:#a6c9ea;font-size:.9rem}
+
+  @media (max-width: 960px){
+    nav{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-cards{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr}
+    .contact-cards{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+
+  .sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;justify-content:center;padding:12px;background:linear-gradient(180deg, transparent, rgba(255,255,255,.85)); backdrop-filter: blur(8px)}
+  .sticky-call a{flex:1; text-align:center; padding:12px 10px; border-radius:12px; font-weight:900; border:1px solid rgba(0,0,0,.08); background:#fff}
+  .sticky-call .hot{background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; border:0}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+</style>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TowingService",
+  "name":"Exit 38 Towing & Recovery",
+  "areaServed":["New Jersey","Pennsylvania","New York"],
+  "telephone":"+1-609-532-4449",
+  "email":"info@e38towing.com",
+  "url":"https://e38towing.com",
+  "openingHours":"Mo-Su 00:00-23:59",
+  "serviceArea":{"@type":"Place","name":"Tri-State Area (NJ/PA/NY)"},
+  "priceRange":"$$"
+}
+</script>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="wrap row space">
-      <div class="logo-wrap">
-        <!-- Updated SVG Logo: blue primary, dark-green accent, race theme -->
-        <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="Exit 38 Towing & Recovery logo" role="img">
-          <defs>
-            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#0b77d5"/>
-              <stop offset="1" stop-color="#0b7a55"/>
-            </linearGradient>
-            <pattern id="checks" width="10" height="10" patternUnits="userSpaceOnUse">
-              <rect width="10" height="10" fill="#0b2740"/>
-              <rect width="5" height="5" fill="#0b7a55"/>
-              <rect x="5" y="5" width="5" height="5" fill="#0b7a55"/>
-            </pattern>
-            <filter id="glow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0b77d5" flood-opacity=".5"/></filter>
-          </defs>
-          <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
-          <path d="M20 120 Q90 150 160 120 L160 150 Q90 180 20 150 Z" fill="url(#lg)" opacity=".12"/>
-          <!-- Swoosh car line -->
-          <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg)" stroke-width="10" fill="none" stroke-linecap="round" filter="url(#glow)"/>
-          <path d="M110 78 q14 -10 24 0 l10 5 q-14 8 -28 0 Z" fill="url(#lg)"/>
-          <!-- Checkered flag block -->
-          <rect x="30" y="98" width="46" height="28" fill="url(#checks)" rx="4"/>
-          <!-- E38 -->
-          <text x="88" y="117" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="48" fill="url(#lg)" letter-spacing="1">E38</text>
-        </svg>
-        <div class="brand-text">
-          <div class="brand-title">Exit 38 Towing & Recovery</div>
-          <div class="brand-sub">24/7 • Tri-State (NJ • PA • NY)</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#coverage">Coverage</a>
-        <a href="#gallery">Fleet</a>
-        <a href="#contact" class="cta">Call 609-532-4449</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="badge">⏱️ <b>Under 30-min</b> avg dispatch in-zone</span>
-        <h1>Fast, Professional Towing & Roadside — Any Hour, Any Weather</h1>
-        <p class="lead">From light-duty to flatbed, lockouts to jump-starts — Exit 38 Towing & Recovery gets you moving again. Serving New Jersey, Pennsylvania, and New York 24/7.</p>
-        <div class="chips" style="margin:14px 0 10px 0">
-          <span class="pill">📍 Tri-State Coverage</span>
-          <span class="pill">🕘 24/7/365</span>
-          <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🛠️ Licensed & Insured</span>
-        </div>
-
-        <div class="hero-cards">
-          <div class="card">
-            <h3>🚨 Emergency Tows</h3>
-            <p>Breakdowns, no-starts, or accidents — rapid dispatch with live ETA updates.</p>
-          </div>
-          <div class="card">
-            <h3>🔧 Roadside Help</h3>
-            <p>Jump-starts, tire changes, fuel delivery, winch-outs, and lockouts.</p>
-          </div>
-          <div class="card">
-            <h3>🛻 Flatbed & Specialty</h3>
-            <p>AWD, low-clearance, classics, and light equipment transport.</p>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <a class="cta" href="tel:+16095324449">📞 Call Now • 609-532-4449</a>
-          <a class="cta" style="background:linear-gradient(135deg,var(--accent),var(--brand))" href="#contact">💬 Get a Quick Quote</a>
-        </div>
-      </div>
-
-      <div class="hero-img" aria-label="Tow truck on highway">
-        <!-- Image with robust fallbacks -->
-        <img class="smart-img" alt="Flatbed tow truck on highway"
-             data-keywords="tow,truck,highway"
-             data-role="hero">
+<header>
+  <div class="wrap row space">
+    <div class="logo-wrap">
+      <!-- Blue + dark-green race-theme logo -->
+      <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="Exit 38 Towing & Recovery logo" role="img">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0b77d5"/><stop offset="1" stop-color="#0b7a55"/>
+          </linearGradient>
+          <pattern id="checks" width="10" height="10" patternUnits="userSpaceOnUse">
+            <rect width="10" height="10" fill="#071c2b"/>
+            <rect width="5" height="5" fill="#0b7a55"/><rect x="5" y="5" width="5" height="5" fill="#0b7a55"/>
+          </pattern>
+        </defs>
+        <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
+        <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg)" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <rect x="30" y="98" width="46" height="28" fill="url(#checks)" rx="4"/>
+        <text x="88" y="117" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="48" fill="url(#lg)" letter-spacing="1">E38</text>
+      </svg>
+      <div class="brand-text">
+        <div class="brand-title">Exit 38 Towing & Recovery</div>
+        <div class="brand-sub">24/7 • Tri-State (NJ • PA • NY)</div>
       </div>
     </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="wrap">
-      <h2 class="section-title">Towing & Roadside Services</h2>
-      <p class="section-desc">Transparent pricing, careful handling, and friendly operators. Ask about fleet accounts and preferred partner rates.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Local & Long-Distance</h3>
-          <p>Point-to-point tows anywhere in NJ/PA/NY. Flatbed available for AWD and performance vehicles.</p>
-        </div>
-        <div class="card">
-          <h3>Accident Recovery</h3>
-          <p>Secure winch-outs, roll-backs, and site clean-up coordination with law enforcement & insurers.</p>
-        </div>
-        <div class="card">
-          <h3>Roadside Assistance</h3>
-          <p>Jump-starts, tire changes, lockouts, and fuel delivery to get you rolling without the tow.</p>
-        </div>
-        <div class="card">
-          <h3>Private Property • Impounds</h3>
-          <p>Property owner/HOA agreements, posted signage, and compliant vehicle removal procedures.</p>
-        </div>
-        <div class="card">
-          <h3>Specialty & Show Vehicles</h3>
-          <p>Low-profile ramps, soft straps, and damage-free tie-downs for exotics, classics, and race cars.</p>
-        </div>
-        <div class="card">
-          <h3>Light Equipment Transport</h3>
-          <p>ATVs, small tractors, toolboxes, and site equipment secured and delivered safely.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coverage -->
-  <section id="coverage" style="background:#eaf3ff;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)">
-    <div class="wrap">
-      <h2 class="section-title">Tri-State Coverage</h2>
-      <p class="section-desc">Dispatch across New Jersey, Eastern Pennsylvania, and New York Metro. Common zones include: Atlantic County, Cape May, Camden, Burlington, Philadelphia, Bucks, Montgomery, Staten Island, Brooklyn, and North Jersey corridors along the Turnpike & Parkway.</p>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Primary Corridors</h3>
-          <p>Garden State Pkwy, I-95/NJ Turnpike, I-76, I-295, AC Expressway, I-80, I-78, I-287, US-30/40/322.</p>
-          <div class="chips" style="margin-top:8px">
-            <span class="pill">🚚 Flatbed Available</span>
-            <span class="pill">📡 Live ETA</span>
-            <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🧾 Digital Invoices</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Hours & Contact</h3>
-          <p><b>24/7/365</b> Dispatch — call anytime.</p>
-          <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>
-             ✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
-          <p>Typical in-zone dispatch: 15–45 minutes. Weather and traffic may affect times.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fleet Gallery -->
-  <section id="gallery">
-    <div class="wrap">
-      <h2 class="section-title">Fleet & On-Scene</h2>
-      <p class="section-desc">A glimpse of the work — from clean flatbed loads to careful roadside service.</p>
-      <div class="gallery">
-        <div class="g"><img class="smart-img" alt="Flatbed tow" data-keywords="flatbed,tow,truck" data-role="gallery"></div>
-        <div class="g"><img class="smart-img" alt="Roadside assistance" data-keywords="towing,roadside,assistance" data-role="gallery"></div>
-        <div class="g"><img class="smart-img" alt="Vehicle breakdown" data-keywords="car,breakdown,highway" data-role="gallery"></div>
-        <div class="g"><img class="smart-img" alt="Winch-out scene" data-keywords="winch,tow,rescue" data-role="gallery"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quote / Contact -->
-  <section id="contact">
-    <div class="wrap">
-      <h2 class="section-title">Get a Quick Quote</h2>
-      <p class="section-desc">Tell us where you are, where you’re headed, and what you’re driving. We’ll reply with an ETA and price.</p>
-
-      <div class="contact-cards">
-        <form id="quoteForm" novalidate>
-          <label>Full Name
-            <input type="text" name="name" placeholder="Your name" required />
-          </label>
-          <label>Phone
-            <input type="tel" name="phone" placeholder="(609) 532-4449" required />
-          </label>
-          <label>Email (optional)
-            <input type="email" name="email" placeholder="you@example.com" />
-          </label>
-          <div class="grid-2">
-            <label>Pickup Location
-              <input type="text" name="pickup" placeholder="Address or cross-streets" required />
-            </label>
-            <label>Drop-Off Location
-              <input type="text" name="dropoff" placeholder="Address or city" required />
-            </label>
-          </div>
-          <div class="grid-2">
-            <label>Vehicle
-              <input type="text" name="vehicle" placeholder="Year, make & model" required />
-            </label>
-            <label>Service Type
-              <select name="service" required>
-                <option value="">Select…</option>
-                <option>Tow — Local</option>
-                <option>Tow — Long Distance</option>
-                <option>Flatbed (AWD/Low)</option>
-                <option>Jump-Start</option>
-                <option>Tire Change</option>
-                <option>Fuel Delivery</option>
-                <option>Lockout</option>
-                <option>Winch-Out</option>
-              </select>
-            </label>
-          </div>
-          <label>Notes
-            <textarea name="notes" rows="4" placeholder="Any details we should know (keys present, lowered car, location specifics, etc.)"></textarea>
-          </label>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-            <button class="btn-primary" type="submit">Request Quote</button>
-            <a class="cta" href="tel:+16095324449" style="text-decoration:none">Or Call 609-532-4449</a>
-          </div>
-          <p id="formMsg" style="margin-top:10px;color:#0e3550;font-weight:700"></p>
-        </form>
-
-        <div class="card">
-          <h3>Direct Contact</h3>
-          <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>
-             ✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
-          <h3>Billing & Fleets</h3>
-          <p>Digital invoices, photos on delivery, and fleet/municipal accounts available.</p>
-          <h3>Hours</h3>
-          <p><b>Open 24/7/365</b> — nights, weekends, and holidays.</p>
-          <h3>Insurance</h3>
-          <p>Fully licensed & insured. COI available on request.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <div class="logo-wrap" style="gap:10px">
-            <!-- Mini logo reuse -->
-            <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#0b77d5"/>
-                  <stop offset="1" stop-color="#0b7a55"/>
-                </linearGradient>
-              </defs>
-              <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
-              <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg2)" stroke-width="10" fill="none" stroke-linecap="round"/>
-              <text x="88" y="117" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="48" fill="url(#lg2)" letter-spacing="1">E38</text>
-            </svg>
-            <div>
-              <div style="font-weight:900;font-size:1.1rem">Exit 38 Towing & Recovery</div>
-              <div class="fine">Tri-State • 24/7/365</div>
-            </div>
-          </div>
-          <p class="fine" style="margin-top:10px">© <span id="yr"></span> Exit 38 Towing & Recovery. All rights reserved.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <p><a href="#services">Services</a><br/>
-             <a href="#coverage">Coverage</a><br/>
-             <a href="#gallery">Fleet</a><br/>
-             <a href="#contact">Quote</a></p>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>
-             ✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Sticky mobile call/email -->
-  <div class="sticky-call">
-    <a class="hot" href="tel:+16095324449">📞 Call 24/7</a>
-    <a href="mailto:info@e38towing.com">✉️ Email</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#gallery">Fleet</a>
+      <a href="#contact" class="cta">Call 609-532-4449</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){
-          e.preventDefault();
-          document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
-        }
-      });
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">⏱️ <b>Under 30-min</b> avg dispatch in-zone</span>
+      <h1>Fast, Professional Towing & Roadside — Any Hour, Any Weather</h1>
+      <p class="lead">Light-duty to flatbed, lockouts to jump-starts — Exit 38 Towing & Recovery gets you moving again. Serving NJ • PA • NY 24/7.</p>
+      <div class="chips" style="margin:14px 0 10px 0">
+        <span class="pill">📍 Tri-State Coverage</span>
+        <span class="pill">🕘 24/7/365</span>
+        <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🛠️ Licensed & Insured</span>
+      </div>
+      <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="cta" href="tel:+16095324449">📞 Call Now • 609-532-4449</a>
+        <a class="cta" style="background:linear-gradient(135deg,var(--accent),var(--brand))" href="#contact">💬 Get a Quick Quote</a>
+      </div>
+    </div>
+
+    <!-- HERO IMAGE (local file with guaranteed fallback) -->
+    <div class="hero-img" aria-label="Tow truck on highway">
+      <img id="heroImg" alt="Flatbed tow truck"
+           src="assets/hero.jpg"
+           referrerpolicy="no-referrer"
+           crossorigin="anonymous">
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2 class="section-title">Towing & Roadside Services</h2>
+    <p class="section-desc">Transparent pricing, careful handling, and friendly operators. Ask about fleet accounts and preferred partner rates.</p>
+    <div class="grid-3">
+      <div class="card"><h3>Local & Long-Distance</h3><p>Point-to-point tows anywhere in NJ/PA/NY. Flatbed available for AWD and performance vehicles.</p></div>
+      <div class="card"><h3>Accident Recovery</h3><p>Secure winch-outs, roll-backs, and site clean-up coordination with law enforcement & insurers.</p></div>
+      <div class="card"><h3>Roadside Assistance</h3><p>Jump-starts, tire changes, lockouts, and fuel delivery to get you rolling without the tow.</p></div>
+      <div class="card"><h3>Private Property • Impounds</h3><p>Property owner/HOA agreements, posted signage, and compliant vehicle removal procedures.</p></div>
+      <div class="card"><h3>Specialty & Show Vehicles</h3><p>Low-profile ramps, soft straps, and damage-free tie-downs for exotics, classics, and race cars.</p></div>
+      <div class="card"><h3>Light Equipment Transport</h3><p>ATVs, small tractors, toolboxes, and site equipment secured and delivered safely.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="coverage" style="background:#eaf3ff;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)">
+  <div class="wrap">
+    <h2 class="section-title">Tri-State Coverage</h2>
+    <p class="section-desc">Dispatch across New Jersey, Eastern Pennsylvania, and New York Metro. Common zones include: Atlantic County, Cape May, Camden, Burlington, Philadelphia, Bucks, Montgomery, Staten Island, Brooklyn, and North Jersey corridors along the Turnpike & Parkway.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Primary Corridors</h3>
+        <p>Garden State Pkwy, I-95/NJ Turnpike, I-76, I-295, AC Expressway, I-80, I-78, I-287, US-30/40/322.</p>
+        <div class="chips" style="margin-top:8px">
+          <span class="pill">🚚 Flatbed Available</span>
+          <span class="pill">📡 Live ETA</span>
+          <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🧾 Digital Invoices</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Hours & Contact</h3>
+        <p><b>24/7/365</b> Dispatch — call anytime.</p>
+        <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
+        <p>Typical in-zone dispatch: 15–45 minutes. Weather and traffic may affect times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="section-title">Fleet & On-Scene</h2>
+    <p class="section-desc">A glimpse of the work — from clean flatbed loads to careful roadside service.</p>
+    <div class="gallery">
+      <div class="g"><img class="fleet" alt="Flatbed tow" src="assets/fleet-1.jpg" referrerpolicy="no-referrer" crossorigin="anonymous"></div>
+      <div class="g"><img class="fleet" alt="Roadside assistance" src="assets/fleet-2.jpg" referrerpolicy="no-referrer" crossorigin="anonymous"></div>
+      <div class="g"><img class="fleet" alt="Vehicle breakdown" src="assets/fleet-3.jpg" referrerpolicy="no-referrer" crossorigin="anonymous"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Get a Quick Quote</h2>
+    <p class="section-desc">Tell us where you are, where you’re headed, and what you’re driving. We’ll reply with an ETA and price.</p>
+    <div class="contact-cards">
+      <form id="quoteForm" novalidate>
+        <label>Full Name <input type="text" name="name" placeholder="Your name" required /></label>
+        <label>Phone <input type="tel" name="phone" placeholder="(609) 532-4449" required /></label>
+        <label>Email (optional) <input type="email" name="email" placeholder="you@example.com" /></label>
+        <div class="grid-2">
+          <label>Pickup Location <input type="text" name="pickup" placeholder="Address or cross-streets" required /></label>
+          <label>Drop-Off Location <input type="text" name="dropoff" placeholder="Address or city" required /></label>
+        </div>
+        <div class="grid-2">
+          <label>Vehicle <input type="text" name="vehicle" placeholder="Year, make & model" required /></label>
+          <label>Service Type
+            <select name="service" required>
+              <option value="">Select…</option>
+              <option>Tow — Local</option>
+              <option>Tow — Long Distance</option>
+              <option>Flatbed (AWD/Low)</option>
+              <option>Jump-Start</option>
+              <option>Tire Change</option>
+              <option>Fuel Delivery</option>
+              <option>Lockout</option>
+              <option>Winch-Out</option>
+            </select>
+          </label>
+        </div>
+        <label>Notes
+          <textarea name="notes" rows="4" placeholder="Any details we should know (keys present, lowered car, location specifics, etc.)"></textarea>
+        </label>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <button class="btn-primary" type="submit">Request Quote</button>
+          <a class="cta" href="tel:+16095324449" style="text-decoration:none">Or Call 609-532-4449</a>
+        </div>
+        <p id="formMsg" style="margin-top:10px;color:#0e3550;font-weight:700"></p>
+      </form>
+
+      <div class="card">
+        <h3>Direct Contact</h3>
+        <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
+        <h3>Billing & Fleets</h3>
+        <p>Digital invoices, photos on delivery, and fleet/municipal accounts available.</p>
+        <h3>Hours</h3>
+        <p><b>Open 24/7/365</b> — nights, weekends, and holidays.</p>
+        <h3>Insurance</h3>
+        <p>Fully licensed & insured. COI available on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo-wrap" style="gap:10px">
+          <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b77d5"/><stop offset="1" stop-color="#0b7a55"/></linearGradient></defs>
+            <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
+            <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg2)" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <text x="88" y="117" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="48" fill="url(#lg2)" letter-spacing="1">E38</text>
+          </svg>
+          <div><div style="font-weight:900;font-size:1.1rem">Exit 38 Towing & Recovery</div><div class="fine">Tri-State • 24/7/365</div></div>
+        </div>
+        <p class="fine" style="margin-top:10px">© <span id="yr"></span> Exit 38 Towing & Recovery. All rights reserved.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#services">Services</a><br/><a href="#coverage">Coverage</a><br/><a href="#gallery">Fleet</a><br/><a href="#contact">Quote</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:+16095324449">609-532-4449</a><br/>✉️ <a href="mailto:info@e38towing.com">info@e38towing.com</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a class="hot" href="tel:+16095324449">📞 Call 24/7</a>
+  <a href="mailto:info@e38towing.com">✉️ Email</a>
+</div>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth'}); }
     });
+  });
 
-    // Simple fake submit (replace with backend later)
-    const f = document.getElementById('quoteForm');
-    const msg = document.getElementById('formMsg');
-    f.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(f).entries());
-      const line = `Thanks, ${data.name||'driver'} — we’ll text/call ${data.phone} with an ETA and quote shortly.`;
-      msg.textContent = line;
-      f.reset();
-    });
+  // Quote form (mock)
+  const f = document.getElementById('quoteForm');
+  const msg = document.getElementById('formMsg');
+  f.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(f).entries());
+    msg.textContent = `Thanks, ${data.name||'driver'} — we’ll text/call ${data.phone} with an ETA and quote shortly.`;
+    f.reset();
+  });
 
-    // Year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-    /* ===== Robust royalty-free image loader =====
-       Uses Unsplash Source endpoints with multiple keyword sets and sizes.
-       If the first URL fails, it retries alternates, then a final generic fallback.
-    */
-    const PROVIDERS = (keywords, size='1600x900') => ([
-      `https://source.unsplash.com/${size}/?${encodeURIComponent(keywords)}`,
-      `https://source.unsplash.com/random/${size}/?${encodeURIComponent(keywords)}`,
-      `https://source.unsplash.com/${size}/?${encodeURIComponent(keywords.split(',')[0])}`,
-      // generic automotive/towing backups
-      `https://source.unsplash.com/${size}/?towing`,
-      `https://source.unsplash.com/${size}/?tow-truck`,
-      `https://source.unsplash.com/${size}/?roadside`,
-      `https://source.unsplash.com/${size}/?flatbed`,
-      `https://source.unsplash.com/${size}/?highway,truck`
-    ]);
+  /* ===== Guaranteed image fallback =====
+     If a local file is missing or blocked, we swap to an inline SVG banner,
+     so you never see broken icons again.
+  */
+  function svgFallback(text='Exit 38 Towing & Recovery'){
+    return 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#0b77d5"/><stop offset="1" stop-color="#0b7a55"/></linearGradient></defs>
+        <rect width="100%" height="100%" fill="#dbe9f7"/>
+        <rect x="0" y="820" width="1600" height="80" fill="url(#g)"/>
+        <text x="48" y="870" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#071c2b">${text}</text>
+      </svg>
+    `);
+  }
 
-    function loadWithFallback(imgEl, keywords, role){
-      const size = role === 'hero' ? '1600x900' : '800x600';
-      const urls = PROVIDERS(keywords, size);
-      let idx = 0;
+  function ensureImage(el){
+    if(!el) return;
+    const fallback = () => { el.src = svgFallback(el.alt || 'Exit 38'); el.onerror = null; };
+    el.addEventListener('error', fallback, {once:true});
+  }
 
-      const tryNext = () => {
-        if(idx >= urls.length){
-          // final, never-fail tiny SVG placeholder in brand colors
-          imgEl.src = 'data:image/svg+xml;utf8,' +
-            encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#0b77d5"/>
-                  <stop offset="1" stop-color="#0b7a55"/>
-                </linearGradient>
-              </defs>
-              <rect width="800" height="600" fill="#dbe9f7"/>
-              <rect x="0" y="540" width="800" height="60" fill="url(#g)"/>
-              <text x="40" y="580" font-family="Arial" font-size="28" fill="#071c2b">Exit 38 Towing & Recovery</text>
-            </svg>`);
-          imgEl.removeAttribute('data-keywords');
-          return;
-        }
-        const candidate = urls[idx++];
-        // Preload to avoid flashing broken image
-        const probe = new Image();
-        probe.crossOrigin = 'anonymous';
-        probe.onload = () => {
-          imgEl.src = candidate;
-          imgEl.removeAttribute('data-keywords');
-        };
-        probe.onerror = tryNext;
-        probe.src = candidate;
-      };
-
-      // attach one-time onerror in case the very first assignment fails after preload (rare)
-      imgEl.onerror = tryNext;
-      tryNext();
-    }
-
-    document.querySelectorAll('.smart-img').forEach(img=>{
-      const kw = img.getAttribute('data-keywords') || 'towing,truck,roadside';
-      const role = img.getAttribute('data-role') || 'gallery';
-      loadWithFallback(img, kw, role);
-    });
-  </script>
+  ensureImage(document.getElementById('heroImg'));
+  document.querySelectorAll('.fleet').forEach(ensureImage);
+</script>
 </body>
 </html>
