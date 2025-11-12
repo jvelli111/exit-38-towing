@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Exit 38 Towing & Recovery | 24/7 Tri-State Roadside & Tows</title>
   <meta name="description" content="Exit 38 Towing & Recovery — Fast 24/7 towing, roadside assistance, and vehicle recovery across the Tri-State (NJ/PA/NY). Call 609-532-4449." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2300a86b'/%3E%3Cstop stop-color='%23007ad9' offset='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='12' fill='%230b1f17'/%3E%3Cpath d='M10 44 L24 20 L38 44 Z' fill='url(%23g)'/%3E%3Ccircle cx='46' cy='22' r='8' fill='url(%23g)'/%3E%3C/svg%3E" />
   <style>
     :root{
-      --brand:#0ea472;       /* emerald green */
-      --brand-2:#0b77d5;     /* vivid blue */
-      --ink:#0a1a15;
-      --muted:#355a4f;
-      --bg:#f4fbf8;
+      /* Blue-first palette with dark-green accents */
+      --brand:#0b77d5;       /* primary blue */
+      --brand-2:#0a5fb0;     /* deeper blue */
+      --accent:#0b7a55;      /* dark green accent */
+      --accent-2:#084e3a;    /* darker green */
+      --ink:#09131a;
+      --muted:#385c73;
+      --bg:#f4f9ff;          /* very light blue background */
       --card:#ffffff;
-      --ring: rgba(14,164,114,.25);
+      --ring: rgba(11,119,213,.25);
       --radius:16px;
       --shadow: 0 8px 30px rgba(0,0,0,.08);
     }
@@ -28,7 +30,7 @@
     header{
       position:sticky; top:0; z-index:50;
       backdrop-filter:saturate(180%) blur(10px);
-      background:rgba(244,251,248,.8);
+      background:rgba(244,249,255,.85);
       border-bottom:1px solid rgba(0,0,0,.05);
     }
     .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -39,15 +41,17 @@
     .brand-text{line-height:1}
     .brand-title{font-weight:800;font-size:1.3rem;letter-spacing:.2px}
     .brand-sub{font-size:.85rem;color:var(--muted)}
-    nav a{padding:10px 12px;border-radius:12px;font-weight:600;color:#0f2b23}
-    nav a:hover{background:#e9f7f1}
-    .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:12px 16px;border-radius:14px;font-weight:800;box-shadow:var(--shadow)}
+    nav a{padding:10px 12px;border-radius:12px;font-weight:600;color:#0b2740}
+    nav a:hover{background:#e9f2ff}
+    .cta{display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;
+      padding:12px 16px;border-radius:14px;font-weight:800;box-shadow:var(--shadow)}
     .cta small{opacity:.9;font-weight:600}
 
     /* Hero */
     .hero{
       position:relative; overflow:hidden; border-bottom:1px solid rgba(0,0,0,.06);
-      background:linear-gradient(180deg, rgba(14,164,114,.08), rgba(11,119,213,.06));
+      background:linear-gradient(180deg, rgba(11,119,213,.08), rgba(11,122,85,.06));
     }
     .hero-grid{
       display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
@@ -56,35 +60,35 @@
     .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(0,0,0,.06);padding:8px 12px;border-radius:999px;box-shadow:var(--shadow)}
     .badge b{color:var(--brand)}
     h1{font-size:clamp(28px,4vw,44px);margin:.4rem 0 1rem 0}
-    .lead{font-size:clamp(16px,1.8vw,18px);color:#164239}
+    .lead{font-size:clamp(16px,1.8vw,18px);color:#0e3550}
     .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
     .card{
       background:var(--card); border:1px solid rgba(0,0,0,.06); border-radius:var(--radius);
       padding:16px; box-shadow:var(--shadow)
     }
     .card h3{font-size:1rem;margin:.2rem 0 .6rem 0}
-    .card p{font-size:.95rem;color:#2c5247}
+    .card p{font-size:.95rem;color:#22445a}
 
     .hero-img{
       border-radius:var(--radius);
       overflow:hidden;box-shadow:var(--shadow);
-      aspect-ratio: 16/10; background:#d6eee4;
+      aspect-ratio: 16/10; background:#dbe9f7;
     }
     .hero-img img{width:100%;height:100%;object-fit:cover}
 
     /* Sections */
     section{padding:64px 0}
     .section-title{font-size:1.8rem;margin:0 0 14px 0}
-    .section-desc{color:#2a4f45;margin:0 0 24px 0}
+    .section-desc{color:#244a62;margin:0 0 24px 0}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#e9f7f1;border:1px solid rgba(0,0,0,.06);font-weight:700;color:#0f2b23}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eaf3ff;border:1px solid rgba(0,0,0,.06);font-weight:700;color:#0b2740}
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .gallery .g{
       aspect-ratio: 4/3; overflow:hidden; border-radius:14px; box-shadow:var(--shadow);
-      background:#d6eee4;
+      background:#dbe9f7;
     }
     .gallery img{width:100%;height:100%;object-fit:cover}
 
@@ -94,20 +98,20 @@
     }
     label{font-weight:700;font-size:.95rem}
     input,textarea,select{
-      width:100%;margin-top:6px;margin-bottom:14px;padding:12px 14px;border:1px solid #cfe7dd;border-radius:12px;background:#f9fefc;
+      width:100%;margin-top:6px;margin-bottom:14px;padding:12px 14px;border:1px solid #c9dbec;border-radius:12px;background:#f7fbff;
       outline:none; box-shadow:0 0 0 3px transparent; transition:.2s box-shadow;
       font-size:1rem;
     }
     input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px var(--ring)}
     button{cursor:pointer;border:0;border-radius:14px;padding:14px 16px;font-weight:900}
-    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; box-shadow:var(--shadow)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; box-shadow:var(--shadow)}
     .contact-cards{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
 
     /* Footer */
-    footer{background:#0f2b23;color:#e6fff6;padding:36px 0;margin-top:32px}
-    footer a{color:#b7ffe8}
+    footer{background:#0b2740;color:#e6f2ff;padding:36px 0;margin-top:32px}
+    footer a{color:#c7e1ff}
     .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
-    .fine{color:#9fe9d2;font-size:.9rem}
+    .fine{color:#a6c9ea;font-size:.9rem}
 
     /* Mobile */
     @media (max-width: 960px){
@@ -133,10 +137,8 @@
       border:1px solid rgba(0,0,0,.08); background:#fff;
     }
     .sticky-call .hot{
-      background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; border:0;
+      background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; border:0;
     }
-
-    /* Utility chips */
     .chips{display:flex;flex-wrap:wrap;gap:10px}
   </style>
 
@@ -151,7 +153,6 @@
     "email":"info@e38towing.com",
     "url":"https://e38towing.com",
     "openingHours":"Mo-Su 00:00-23:59",
-    "sameAs":[],
     "serviceArea":{"@type":"Place","name":"Tri-State Area (NJ/PA/NY)"},
     "priceRange":"$$"
   }
@@ -163,24 +164,23 @@
   <header>
     <div class="wrap row space">
       <div class="logo-wrap">
-        <!-- Custom SVG Logo -->
+        <!-- Updated SVG Logo: blue primary, dark-green accent, race theme -->
         <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-label="Exit 38 Towing & Recovery logo" role="img">
           <defs>
             <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#0ea472"/>
-              <stop offset="1" stop-color="#0b77d5"/>
+              <stop offset="0" stop-color="#0b77d5"/>
+              <stop offset="1" stop-color="#0b7a55"/>
             </linearGradient>
             <pattern id="checks" width="10" height="10" patternUnits="userSpaceOnUse">
-              <rect width="10" height="10" fill="#0b1f17"/>
-              <rect width="5" height="5" fill="#24c897"/>
-              <rect x="5" y="5" width="5" height="5" fill="#24c897"/>
+              <rect width="10" height="10" fill="#0b2740"/>
+              <rect width="5" height="5" fill="#0b7a55"/>
+              <rect x="5" y="5" width="5" height="5" fill="#0b7a55"/>
             </pattern>
-            <filter id="glow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#24c897" flood-opacity=".5"/></filter>
+            <filter id="glow"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0b77d5" flood-opacity=".5"/></filter>
           </defs>
-          <!-- Shield -->
-          <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#0b1f17"/>
-          <path d="M20 120 Q90 150 160 120 L160 150 Q90 180 20 150 Z" fill="url(#lg)" opacity=".15"/>
-          <!-- Race swoosh car silhouette -->
+          <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
+          <path d="M20 120 Q90 150 160 120 L160 150 Q90 180 20 150 Z" fill="url(#lg)" opacity=".12"/>
+          <!-- Swoosh car line -->
           <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg)" stroke-width="10" fill="none" stroke-linecap="round" filter="url(#glow)"/>
           <path d="M110 78 q14 -10 24 0 l10 5 q-14 8 -28 0 Z" fill="url(#lg)"/>
           <!-- Checkered flag block -->
@@ -206,13 +206,13 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="badge">⏱️ <b>Under 30-min</b> average dispatch in-zone</span>
+        <span class="badge">⏱️ <b>Under 30-min</b> avg dispatch in-zone</span>
         <h1>Fast, Professional Towing & Roadside — Any Hour, Any Weather</h1>
         <p class="lead">From light-duty to flatbed, lockouts to jump-starts — Exit 38 Towing & Recovery gets you moving again. Serving New Jersey, Pennsylvania, and New York 24/7.</p>
         <div class="chips" style="margin:14px 0 10px 0">
           <span class="pill">📍 Tri-State Coverage</span>
           <span class="pill">🕘 24/7/365</span>
-          <span class="pill">🛠️ Licensed & Insured</span>
+          <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🛠️ Licensed & Insured</span>
         </div>
 
         <div class="hero-cards">
@@ -226,19 +226,21 @@
           </div>
           <div class="card">
             <h3>🛻 Flatbed & Specialty</h3>
-            <p>All-wheel drive, low-clearance, classics, and light equipment transport.</p>
+            <p>AWD, low-clearance, classics, and light equipment transport.</p>
           </div>
         </div>
 
         <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
           <a class="cta" href="tel:+16095324449">📞 Call Now • 609-532-4449</a>
-          <a class="cta" style="background:linear-gradient(135deg,#0b77d5,#0ea472)" href="#contact">💬 Get a Quick Quote</a>
+          <a class="cta" style="background:linear-gradient(135deg,var(--accent),var(--brand))" href="#contact">💬 Get a Quick Quote</a>
         </div>
       </div>
 
       <div class="hero-img" aria-label="Tow truck on highway">
-        <!-- Royalty-free Unsplash image (dynamic) -->
-        <img src="https://source.unsplash.com/1600x900/?tow,truck,highway" alt="Flatbed tow truck on highway" loading="eager" />
+        <!-- Image with robust fallbacks -->
+        <img class="smart-img" alt="Flatbed tow truck on highway"
+             data-keywords="tow,truck,highway"
+             data-role="hero">
       </div>
     </div>
   </section>
@@ -251,7 +253,7 @@
       <div class="grid-3">
         <div class="card">
           <h3>Local & Long-Distance</h3>
-          <p>Point-to-point tows anywhere in NJ/PA/NY. Flatbed available for all-wheel drive and performance vehicles.</p>
+          <p>Point-to-point tows anywhere in NJ/PA/NY. Flatbed available for AWD and performance vehicles.</p>
         </div>
         <div class="card">
           <h3>Accident Recovery</h3>
@@ -278,7 +280,7 @@
   </section>
 
   <!-- Coverage -->
-  <section id="coverage" style="background:#ecfbf4;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)">
+  <section id="coverage" style="background:#eaf3ff;border-top:1px solid rgba(0,0,0,.06);border-bottom:1px solid rgba(0,0,0,.06)">
     <div class="wrap">
       <h2 class="section-title">Tri-State Coverage</h2>
       <p class="section-desc">Dispatch across New Jersey, Eastern Pennsylvania, and New York Metro. Common zones include: Atlantic County, Cape May, Camden, Burlington, Philadelphia, Bucks, Montgomery, Staten Island, Brooklyn, and North Jersey corridors along the Turnpike & Parkway.</p>
@@ -289,7 +291,7 @@
           <div class="chips" style="margin-top:8px">
             <span class="pill">🚚 Flatbed Available</span>
             <span class="pill">📡 Live ETA</span>
-            <span class="pill">🧾 Digital Invoices</span>
+            <span class="pill" style="background:#e9f7f1;border-color:#e1efe8;color:#084e3a">🧾 Digital Invoices</span>
           </div>
         </div>
         <div class="card">
@@ -309,10 +311,10 @@
       <h2 class="section-title">Fleet & On-Scene</h2>
       <p class="section-desc">A glimpse of the work — from clean flatbed loads to careful roadside service.</p>
       <div class="gallery">
-        <div class="g"><img src="https://source.unsplash.com/800x600/?flatbed,tow" alt="Flatbed tow" loading="lazy"></div>
-        <div class="g"><img src="https://source.unsplash.com/800x600/?towing,roadside" alt="Roadside assistance" loading="lazy"></div>
-        <div class="g"><img src="https://source.unsplash.com/800x600/?car,breakdown" alt="Vehicle breakdown" loading="lazy"></div>
-        <div class="g"><img src="https://source.unsplash.com/800x600/?winch,tow" alt="Winch-out scene" loading="lazy"></div>
+        <div class="g"><img class="smart-img" alt="Flatbed tow" data-keywords="flatbed,tow,truck" data-role="gallery"></div>
+        <div class="g"><img class="smart-img" alt="Roadside assistance" data-keywords="towing,roadside,assistance" data-role="gallery"></div>
+        <div class="g"><img class="smart-img" alt="Vehicle breakdown" data-keywords="car,breakdown,highway" data-role="gallery"></div>
+        <div class="g"><img class="smart-img" alt="Winch-out scene" data-keywords="winch,tow,rescue" data-role="gallery"></div>
       </div>
     </div>
   </section>
@@ -329,7 +331,7 @@
             <input type="text" name="name" placeholder="Your name" required />
           </label>
           <label>Phone
-            <input type="tel" name="phone" placeholder="(555) 555-5555" required />
+            <input type="tel" name="phone" placeholder="(609) 532-4449" required />
           </label>
           <label>Email (optional)
             <input type="email" name="email" placeholder="you@example.com" />
@@ -367,7 +369,7 @@
             <button class="btn-primary" type="submit">Request Quote</button>
             <a class="cta" href="tel:+16095324449" style="text-decoration:none">Or Call 609-532-4449</a>
           </div>
-          <p id="formMsg" style="margin-top:10px;color:#1a3d34;font-weight:700"></p>
+          <p id="formMsg" style="margin-top:10px;color:#0e3550;font-weight:700"></p>
         </form>
 
         <div class="card">
@@ -395,11 +397,11 @@
             <svg class="logo-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <defs>
                 <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#0ea472"/>
-                  <stop offset="1" stop-color="#0b77d5"/>
+                  <stop offset="0" stop-color="#0b77d5"/>
+                  <stop offset="1" stop-color="#0b7a55"/>
                 </linearGradient>
               </defs>
-              <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#0b1f17"/>
+              <rect x="8" y="8" rx="22" ry="22" width="164" height="164" fill="#071c2b"/>
               <path d="M25 85 C55 70, 120 60, 150 80" stroke="url(#lg2)" stroke-width="10" fill="none" stroke-linecap="round"/>
               <text x="88" y="117" font-family="Impact, Haettenschweiler, Arial Black, sans-serif" font-size="48" fill="url(#lg2)" letter-spacing="1">E38</text>
             </svg>
@@ -457,6 +459,68 @@
 
     // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    /* ===== Robust royalty-free image loader =====
+       Uses Unsplash Source endpoints with multiple keyword sets and sizes.
+       If the first URL fails, it retries alternates, then a final generic fallback.
+    */
+    const PROVIDERS = (keywords, size='1600x900') => ([
+      `https://source.unsplash.com/${size}/?${encodeURIComponent(keywords)}`,
+      `https://source.unsplash.com/random/${size}/?${encodeURIComponent(keywords)}`,
+      `https://source.unsplash.com/${size}/?${encodeURIComponent(keywords.split(',')[0])}`,
+      // generic automotive/towing backups
+      `https://source.unsplash.com/${size}/?towing`,
+      `https://source.unsplash.com/${size}/?tow-truck`,
+      `https://source.unsplash.com/${size}/?roadside`,
+      `https://source.unsplash.com/${size}/?flatbed`,
+      `https://source.unsplash.com/${size}/?highway,truck`
+    ]);
+
+    function loadWithFallback(imgEl, keywords, role){
+      const size = role === 'hero' ? '1600x900' : '800x600';
+      const urls = PROVIDERS(keywords, size);
+      let idx = 0;
+
+      const tryNext = () => {
+        if(idx >= urls.length){
+          // final, never-fail tiny SVG placeholder in brand colors
+          imgEl.src = 'data:image/svg+xml;utf8,' +
+            encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+              <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0b77d5"/>
+                  <stop offset="1" stop-color="#0b7a55"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="600" fill="#dbe9f7"/>
+              <rect x="0" y="540" width="800" height="60" fill="url(#g)"/>
+              <text x="40" y="580" font-family="Arial" font-size="28" fill="#071c2b">Exit 38 Towing & Recovery</text>
+            </svg>`);
+          imgEl.removeAttribute('data-keywords');
+          return;
+        }
+        const candidate = urls[idx++];
+        // Preload to avoid flashing broken image
+        const probe = new Image();
+        probe.crossOrigin = 'anonymous';
+        probe.onload = () => {
+          imgEl.src = candidate;
+          imgEl.removeAttribute('data-keywords');
+        };
+        probe.onerror = tryNext;
+        probe.src = candidate;
+      };
+
+      // attach one-time onerror in case the very first assignment fails after preload (rare)
+      imgEl.onerror = tryNext;
+      tryNext();
+    }
+
+    document.querySelectorAll('.smart-img').forEach(img=>{
+      const kw = img.getAttribute('data-keywords') || 'towing,truck,roadside';
+      const role = img.getAttribute('data-role') || 'gallery';
+      loadWithFallback(img, kw, role);
+    });
   </script>
 </body>
 </html>
